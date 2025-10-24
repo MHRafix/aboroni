@@ -118,12 +118,12 @@ function RouteComponent() {
 	};
 
 	return (
-		<div className='py-0 px-4'>
-			<h2 className='max-w-7xl mx-auto my-5 p-5 text-center animate-pulse leading-10 bg-purple-950 text-white dark:bg-yellow-400 dark:text-black text-2xl font-extrabold rounded-xl'>
-				🤲 💰 প্রতিটি জুতার লাভের ১০% উম্মাহর স্বার্থে ব্যয় করা হবে!
-			</h2>
-			<div className='relative max-w-7xl mx-auto bg-white dark:bg-[#1A1030] border border-gray-200 dark:border-purple-950 rounded-lg shadow p-6'>
-				<h2 className='text-center font-semibold text-xl mb-6 pb-2 border-b-4 border-dashed border-purple-950 text-purple-950 dark:text-white'>
+		<div className='py-0 px-4 '>
+			{' '}
+			<br />
+			<br /> <br />
+			<div className='relative !my-20 max-w-7xl mx-auto  border border-gray-200 dark:border-purple-950 rounded-lg shadow p-6'>
+				<h2 className='text-center font-semibold text-xl mb-6 pb-2 border-b-4 border-dashed border-gray-200 text-purple-950 dark:text-white'>
 					অর্ডার করতে সঠিক তথ্য দিয়ে নিচের ফরম পূরণ করুন
 				</h2>
 				{/* <pre>{JSON.stringify(cartList, null, 2)}</pre> */}
@@ -184,7 +184,7 @@ function RouteComponent() {
 						</div>
 
 						{/* Product Details */}
-						<div className='bg-gray-50 dark:bg-[#24113d] border dark:border-gray-700 rounded-lg p-4 space-y-4'>
+						<div className='border dark:border-gray-700 rounded-lg p-4 space-y-4'>
 							<h3 className='font-semibold border-b-2 border-dashed border-gray-300 pb-1 text-purple-950 dark:text-white'>
 								প্রোডাক্ট ডিটেইলস
 							</h3>

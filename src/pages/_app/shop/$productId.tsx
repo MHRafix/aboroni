@@ -54,10 +54,7 @@ function RouteComponent() {
 	};
 	const [thumbsSwiper, setThumbsSwiper] = useState<any>('');
 	return (
-		<div className='container mx-auto'>
-			<h2 className='my-5 p-5 text-center animate-pulse leading-10 bg-purple-950 text-white dark:bg-yellow-400 dark:text-black text-2xl font-extrabold rounded-xl mx-2'>
-				🤲 💰 প্রতিটি জুতার লাভের ১০% উম্মাহর স্বার্থে ব্যয় করা হবে!
-			</h2>
+		<div className='container mx-auto mt-20'>
 			<div className='my-5 p-2 grid grid-cols-1 xl:grid-cols-2 gap-6'>
 				{/* Product Image */}
 				<div className='grid border dark:border-purple-950 border-gray-200 p-5 rounded-md'>
@@ -87,11 +84,11 @@ function RouteComponent() {
 											className={`w-full h-[400px] md:h-[550px] rounded-md mx-auto object-cover`}
 										/>
 										{data?.product?.brand?.name && (
-											<Badge className='absolute top-3 left-3 dark:bg-[#FFD600] bg-purple-950 dark:text-black font-bold w-[140px] h-10 text-xl'>
-												Save:{' '}
+											<Badge className='absolute top-3 left-3 dark:bg-[#FFD600] bg-purple-950 dark:text-black font-medium w-[65px] h-7 text-md'>
+												-
 												{data?.product?.regularPrice -
 													data?.product?.salePrice!}{' '}
-												TK.
+												TK
 											</Badge>
 										)}
 									</div>

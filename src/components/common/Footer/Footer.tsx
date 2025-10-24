@@ -1,86 +1,128 @@
-import { useTheme } from '@/components/providers/ThemeProvider';
-import { Button } from '@/components/ui/button';
-import { Link, useNavigate } from '@tanstack/react-router';
-import { Mail, Phone, SearchCheck } from 'lucide-react';
+import { Facebook, Instagram, Twitter } from 'lucide-react';
 
-export default function Footer() {
-	const { theme } = useTheme();
-	const navigate = useNavigate();
-
+const Footer = () => {
 	return (
-		<footer className='backdrop-blur bg-white dark:bg-[#0f172a] border-t border-gray-200 dark:border-t-[#364153] py-10 px-6'>
-			<div className='max-w-lg mx-auto flex flex-col items-center text-center space-y-6'>
-				{/* Logo */}
-				<div className='text-2xl font-bold'>
-					{theme === 'dark' ? (
-						<img
-							src='/white-logo.png'
-							alt='logo'
-							className='h-16 sm:h-22 w-auto object-contain cursor-pointer'
-							onClick={() => navigate({ to: '/' })}
-						/>
-					) : (
-						<img
-							src='/dark-logo.png'
-							alt='logo'
-							className='h-16 sm:h-22 w-auto object-contain cursor-pointer'
-							onClick={() => navigate({ to: '/' })}
-						/>
-					)}
+		<footer className='bg-card border-t border-border py-12 lg:py-16'>
+			<div className='container px-4 md:px-0 mx-auto'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12'>
+					{/* Brand */}
+					<div className='space-y-4'>
+						<h3 className='font-serif text-2xl font-semibold'>Aboroni</h3>
+						<p className='text-muted-foreground text-sm'>
+							Timeless fashion for the modern wardrobe. Discover pieces that
+							define your unique style.
+						</p>
+						<div className='flex gap-4'>
+							<a
+								href='#'
+								className='text-muted-foreground hover:text-foreground transition-colors'
+							>
+								<Instagram className='h-5 w-5' />
+							</a>
+							<a
+								href='#'
+								className='text-muted-foreground hover:text-foreground transition-colors'
+							>
+								<Facebook className='h-5 w-5' />
+							</a>
+							<a
+								href='#'
+								className='text-muted-foreground hover:text-foreground transition-colors'
+							>
+								<Twitter className='h-5 w-5' />
+							</a>
+						</div>
+					</div>
+
+					{/* Shop */}
+					<div>
+						<h4 className='font-medium mb-4'>Shop</h4>
+						<ul className='space-y-3 text-sm text-muted-foreground'>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									New Arrivals
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Women
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Men
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Collections
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					{/* Customer Service */}
+					<div>
+						<h4 className='font-medium mb-4'>Customer Service</h4>
+						<ul className='space-y-3 text-sm text-muted-foreground'>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Contact Us
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Shipping & Returns
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Size Guide
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									FAQs
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					{/* Company */}
+					<div>
+						<h4 className='font-medium mb-4'>Company</h4>
+						<ul className='space-y-3 text-sm text-muted-foreground'>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									About Us
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Sustainability
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Privacy Policy
+								</a>
+							</li>
+							<li>
+								<a href='#' className='hover:text-foreground transition-colors'>
+									Terms of Service
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 
-				{/* Description */}
-				{/* <p className='text-gray-400 text-sm'>
-					Premium products delivered with care. We ensure quality, trust, and
-					satisfaction.
-				</p> */}
-
-				{/* Address */}
-				<p className='text-gray-500 text-md'>
-					Mirpur - 10, Dhaka -1216, Bangladesh
-				</p>
-
-				{/* Email */}
-				<p className='text-gray-500 text-md flex gap-2 '>
-					<Mail className='text-yellow-500' />
-					loafinity.touch@gmail.com
-				</p>
-				<p className='text-gray-500 text-md flex gap-2 '>
-					<Phone className='text-yellow-500' />
-					+880 1343808032
-				</p>
-
-				{/* Social Icons */}
-				<div className='flex space-x-4'>
-					<a
-						href='https://facebook.com/loafinity'
-						className='hover:text-blue-400'
-						target='_blank'
-					>
-						<img
-							src={'https://cdn-icons-png.flaticon.com/128/733/733547.png'}
-							className='w-12 h-12  cursor-pointer'
-						/>
-					</a>
-					<a
-						href='https://wa.me/8801343808032'
-						className='hover:text-blue-500'
-						target='_blank'
-					>
-						<img
-							src={'https://cdn-icons-png.flaticon.com/128/3536/3536445.png'}
-							className='w-12 h-12  cursor-pointer'
-						/>
-					</a>
+				{/* Bottom */}
+				<div className='pt-8 border-t border-border text-center text-sm text-muted-foreground'>
+					<p>&copy; {new Date().getFullYear()} Aboroni. All rights reserved.</p>
 				</div>
-
-				{/* Track Orders Button */}
-				<Link to='/track-order'>
-					<Button className='px-6 py-2 bg-yellow-600 hover:bg-yellow-700 cursor-pointer rounded-lg shadow'>
-						<SearchCheck /> Track Orders
-					</Button>
-				</Link>
 			</div>
 		</footer>
 	);
-}
+};
+
+export default Footer;

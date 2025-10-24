@@ -13,7 +13,6 @@ import {
 import Zoom from 'react-medium-image-zoom';
 // @ts-ignore
 import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Feature } from '../Features/FeatureCard';
 
@@ -22,14 +21,14 @@ const HeroSlider = () => {
 	const navigate = useNavigate();
 
 	return (
-		<section className='relative my-8'>
+		<section className='relative mt-8'>
 			<Swiper
 				autoplay={{
 					delay: 2000, // 2.5s per slide
 					disableOnInteraction: false, // keep autoplay after interaction
 				}}
 				loop={true} // 🔄 infinite loop
-				modules={[Autoplay]}
+				// modules={[Autoplay]}
 				className='mySwiper'
 			>
 				{products?.products?.map((product, idx) => (
@@ -39,14 +38,14 @@ const HeroSlider = () => {
 								<div className='relative'>
 									<div className='absolute -inset-6 rounded-[2rem] blur-2xl' />
 									<div
-										className='relative rounded-[2rem] overflow-hidden ring-1'
+										className='relative rounded-[2rem] overflow-hidden '
 										// style={{ ringColor: colors.card }}
 									>
 										<Zoom>
 											<img
 												src={product?.thumbnail?.externalUrl!}
-												alt='Hero shoe'
-												className='w-full h-[330px] md:h-[550px] object-cover'
+												alt='image'
+												className='w-full h-[330px] md:h-[550px] object-cover border-none'
 											/>
 										</Zoom>
 									</div>
@@ -113,8 +112,8 @@ const HeroSlider = () => {
 									/>
 									<Feature
 										icon={CircleCheckBig}
-										title='১০০% চামড়া'
-										subtitle='পিওর গরুর চামড়া'
+										title='প্রিমিয়াম কোয়ালিটি'
+										subtitle='প্রিমিয়াম কোয়ালিটি'
 									/>
 									<Feature
 										icon={ShieldCheck}
@@ -127,14 +126,14 @@ const HeroSlider = () => {
 								<div className='relative'>
 									<div className='absolute -inset-6 rounded-[2rem] blur-2xl' />
 									<div
-										className='relative rounded-[2rem] overflow-hidden ring-1'
+										className='relative rounded-[2rem] overflow-hidden'
 										// style={{ ringColor: colors.card }}
 									>
 										<Zoom>
 											<img
 												src={product?.thumbnail?.externalUrl!}
-												alt='Hero shoe'
-												className='w-full h-[550px] object-cover'
+												alt='image'
+												className='w-full h-[550px] object-cover border-none'
 											/>
 										</Zoom>
 									</div>
@@ -151,11 +150,15 @@ const HeroSlider = () => {
 									className='text-4xl md:text-6xl dark:text-[#F5F3FF] text-purple-950 font-extrabold leading-tight mb-4'
 									// style={{ color: colors.text }}
 								>
-									Leather{' '}
+									{product?.title.split(' ')[0]}{' '}
 									<span style={{ color: colors.accent }}>
-										{product?.title}{' '}
+										{product?.title?.split(' ').slice(1, -1).join(' ')}{' '}
 									</span>
-									Shoe
+									{
+										product?.title?.split(' ')[
+											product?.title?.split(' ').length - 1
+										]
+									}
 								</h1>
 								<p className='text-base md:text-lg dark:text-[#C8B8FF] text-purple-950 mb-8'>
 									{product?.shortDescription}

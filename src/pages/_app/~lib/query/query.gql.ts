@@ -1,8 +1,8 @@
 import { gql } from '@/lib/api-client';
 
 export const All_Products_Query = gql`
-	query Products($orgUid: String!) {
-		products(orgUID: $orgUid) {
+	query Products($orgUid: String!, $input: ProductListQueryDto) {
+		products(orgUID: $orgUid, input: $input) {
 			nodes {
 				_id
 				title
