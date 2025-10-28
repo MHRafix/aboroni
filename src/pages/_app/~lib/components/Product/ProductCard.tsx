@@ -57,9 +57,9 @@ export const ProductCard = ({ product }: { product: Product }) => {
 						</div> */}
 					</div>
 					<div className='py-4 space-y-2'>
-						<h3 className='font-medium text-md'>{product.title}</h3>
+						<h3 className='font-medium text-sm lg:text-md'>{product.title}</h3>
 						<div className='flex items-center space-x-2'>
-							<span className='font-semibold text-lg dark:text-[#FFD600] text-purple-950'>
+							<span className='font-semibold  text-sm lg:text-lg dark:text-[#FFD600] text-purple-950'>
 								<span className='font-extrabold'>৳</span> {product?.salePrice}
 							</span>
 							{product.regularPrice && (

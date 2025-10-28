@@ -1,10 +1,11 @@
 import { ModeToggler } from '@/components/ModeToggler';
+import { useTheme } from '@/components/providers/ThemeProvider';
 import { Button } from '@/components/ui/button';
 import { trackEvent } from '@/lib/fbPixel';
 import { cartAtom } from '@/store/cart.atom';
-import { Link, useNavigate } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 import { useAtom } from 'jotai';
-import { Menu, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -26,25 +27,32 @@ const Navbar = () => {
 		0
 	);
 
+	const { theme } = useTheme();
+
 	return (
 		<nav className='fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border'>
 			<div className='container md:px-0 px-3 mx-auto'>
 				<div className='flex items-center justify-between h-16 lg:h-20'>
-					{/* Mobile Menu */}
-					<Button variant='ghost' size='icon' className='lg:hidden'>
-						<Menu className='!h-7 !w-7' />
-					</Button>
-
-					{/* Logo */}
-					<Link
-						to='/'
-						className='font-serif text-2xl lg:text-3xl font-semibold tracking-tight'
-					>
-						Aboroni
-					</Link>
+					<div className='flex items-center'>
+						{theme === 'dark' ? (
+							<img
+								src='/dark-logo.png'
+								alt='logo'
+								onClick={() => navigate({ to: '/' })}
+								className='h-12 sm:h-15 w-auto object-contain cursor-pointer'
+							/>
+						) : (
+							<img
+								src='/white-logo.png'
+								alt='logo'
+								onClick={() => navigate({ to: '/' })}
+								className='h-12 sm:h-15 w-auto object-contain cursor-pointer'
+							/>
+						)}
+					</div>
 
 					{/* Desktop Navigation */}
-					<div className='hidden lg:flex items-center gap-8'>
+					{/* <div className='hidden lg:flex items-center gap-8'>
 						<a
 							href='#'
 							className='text-sm font-medium hover:text-foreground/80 transition-colors'
@@ -69,7 +77,7 @@ const Navbar = () => {
 						>
 							Collections
 						</a>
-					</div>
+					</div> */}
 
 					{/* Actions */}
 					<div className='flex items-center gap-3 md:gap-5'>

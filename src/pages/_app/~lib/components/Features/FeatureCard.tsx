@@ -15,15 +15,15 @@ export const Feature = ({
 			// style={{ background: colors.card }}
 		>
 			<Icon
-				className='h-6 w-6 dark:text-purple-950 text-white'
+				className='w-6 h-6 md:h-9 md:w-9 dark:text-purple-950 text-white'
 				// style={{ color: colors.accent }}
 			/>
 		</div>
 		<div>
-			<div className='font-semibold dark:text-[#F5F3FF] text-purple-950'>
+			<div className='md:text-xl font-semibold dark:text-[#F5F3FF] text-purple-950'>
 				{title}
 			</div>
-			<div className='text-sm dark:text-[#C8B8FF] text-purple-950'>
+			<div className='text-md dark:text-[#C8B8FF] text-purple-950'>
 				{subtitle}
 			</div>
 		</div>

@@ -1,13 +1,34 @@
+import { useTheme } from '@/components/providers/ThemeProvider';
+import { useNavigate } from '@tanstack/react-router';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
+	const { theme } = useTheme();
+	const navigate = useNavigate();
+
 	return (
 		<footer className='bg-card border-t border-border py-12 lg:py-16'>
 			<div className='container px-4 md:px-0 mx-auto'>
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12'>
 					{/* Brand */}
 					<div className='space-y-4'>
-						<h3 className='font-serif text-2xl font-semibold'>Aboroni</h3>
+						<div className='flex items-center'>
+							{theme === 'dark' ? (
+								<img
+									src='/dark-logo.png'
+									alt='logo'
+									onClick={() => navigate({ to: '/' })}
+									className='h-12 sm:h-15 w-auto object-contain cursor-pointer'
+								/>
+							) : (
+								<img
+									src='/white-logo.png'
+									alt='logo'
+									onClick={() => navigate({ to: '/' })}
+									className='h-12 sm:h-15 w-auto object-contain cursor-pointer'
+								/>
+							)}
+						</div>{' '}
 						<p className='text-muted-foreground text-sm'>
 							Timeless fashion for the modern wardrobe. Discover pieces that
 							define your unique style.
