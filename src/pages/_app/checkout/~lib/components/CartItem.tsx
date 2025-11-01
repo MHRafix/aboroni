@@ -24,7 +24,7 @@ const CartItem: FC<{
 					className='w-24 h-22 rounded-md border object-cover'
 				/>
 				<div className='flex flex-col gap-2'>
-					<p className='text-md font-medium text-purple-950 dark:text-white'>
+					<p className='text-md font-medium text-[#2b1e20] dark:text-white'>
 						{product?.title || 'N/A'}
 					</p>
 					<div className='flex gap-2 items-center'>
@@ -45,7 +45,7 @@ const CartItem: FC<{
 						</p>
 					</div>
 					<div className='flex items-center gap-3'>
-						<h3 className='text-md font-semibold text-purple-950 dark:text-gray-200'>
+						<h3 className='text-md font-semibold text-[#2b1e20] dark:text-gray-200'>
 							Qty
 						</h3>
 						<div className='flex items-center space-x-2'>
@@ -71,7 +71,7 @@ const CartItem: FC<{
 								// @ts-ignore
 								value={totalQty}
 								readOnly
-								className='w-8 h-8 text-center border rounded-md bg-gray-100 dark:bg-transparent text-purple-950 dark:text-white'
+								className='w-8 h-8 text-center border rounded-md bg-gray-100 dark:bg-transparent text-[#2b1e20] dark:text-white'
 							/>
 							<QtyButton
 								type='inc'
@@ -97,7 +97,7 @@ const CartItem: FC<{
 
 			{/* Right section */}
 			<div className='flex flex-row md:flex-col justify-between md:items-end w-full md:w-auto gap-3 md:gap-5'>
-				<p className='text-md font-semibold text-purple-950 dark:text-white'>
+				<p className='text-md font-semibold text-[#2b1e20] dark:text-white'>
 					TK. {totalQty * product?.salePrice!}{' '}
 					<span className='text-gray-600 text-sm'>
 						({totalQty + ' × ' + product?.salePrice})
@@ -134,7 +134,7 @@ const QtyButton: FC<{ type: string; onClick: CallableFunction }> = ({
 		<button
 			type='button'
 			onClick={() => onClick()}
-			className='p-2 rounded-md bg-gray-100 dark:bg-transparent border hover:bg-purple-100 dark:hover:bg-purple-800 transition'
+			className='p-2 rounded-md bg-gray-100 dark:bg-transparent border hover:bg-purple-100 dark:hover:bg-[#443436] transition'
 		>
 			<Icon className='w-3 h-3' />
 		</button>

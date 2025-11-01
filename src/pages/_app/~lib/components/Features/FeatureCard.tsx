@@ -11,19 +11,19 @@ export const Feature = ({
 }) => (
 	<div className='flex items-center gap-3'>
 		<div
-			className='p-3 rounded-md shadow-md dark:bg-[#FFD600] bg-purple-950'
+			className='p-3 rounded-md shadow-md dark:bg-[#FFD600] bg-[#fcce09]'
 			// style={{ background: colors.card }}
 		>
 			<Icon
-				className='w-6 h-6 md:h-9 md:w-9 dark:text-purple-950 text-white'
+				className='w-6 h-6 md:h-9 md:w-9 text-black'
 				// style={{ color: colors.accent }}
 			/>
 		</div>
 		<div>
-			<div className='md:text-xl font-semibold dark:text-[#F5F3FF] text-purple-950'>
+			<div className='md:text-xl font-semibold dark:text-[#F5F3FF] text-[#2b1e20]'>
 				{title}
 			</div>
-			<div className='text-md dark:text-[#C8B8FF] text-purple-950'>
+			<div className='text-md dark:text-gray-400 text-[#2b1e20]'>
 				{subtitle}
 			</div>
 		</div>

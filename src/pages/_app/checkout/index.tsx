@@ -122,8 +122,8 @@ function RouteComponent() {
 			{' '}
 			<br />
 			<br /> <br />
-			<div className='relative !my-20 max-w-7xl mx-auto  border border-gray-200 dark:border-purple-950 rounded-lg shadow p-6'>
-				<h2 className='text-center font-semibold text-xl mb-6 pb-2 border-b-4 border-dashed border-gray-200 text-purple-950 dark:text-white'>
+			<div className='relative !my-20 max-w-7xl mx-auto  border border-gray-200 dark:border-[#2b1e20] rounded-lg shadow p-6'>
+				<h2 className='text-center font-semibold text-xl mb-6 pb-2 border-b-4 border-dashed border-gray-200 text-[#2b1e20] dark:text-white'>
 					অর্ডার করতে সঠিক তথ্য দিয়ে নিচের ফরম পূরণ করুন
 				</h2>
 				{/* <pre>{JSON.stringify(cartList, null, 2)}</pre> */}
@@ -134,7 +134,7 @@ function RouteComponent() {
 					>
 						{/* Billing Details */}
 						<div className='space-y-4'>
-							<h3 className='font-semibold text-purple-950 dark:text-white border-b pb-1'>
+							<h3 className='font-semibold text-[#2b1e20] dark:text-white border-b pb-1'>
 								বিলিং ডিটেইলস
 							</h3>
 
@@ -157,12 +157,12 @@ function RouteComponent() {
 								{...form.register('email')}
 							/>
 							<div>
-								<label className='block text-sm mb-1 text-purple-950 dark:text-gray-300'>
+								<label className='block text-sm mb-1 text-[#2b1e20] dark:text-gray-300'>
 									আপনার জেলা সিলেক্ট করুন *
 								</label>
 								<select
 									{...form.register('district')}
-									className='w-full border rounded-md px-3 py-3 text-sm bg-white dark:bg-transparent text-purple-950 dark:text-white border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-purple-500'
+									className='w-full border rounded-md px-3 py-3 text-sm bg-transparent text-red-500 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-[#2b1e20]'
 								>
 									{districts?.map((dis) => (
 										<option key={dis}>{dis}</option>
@@ -185,7 +185,7 @@ function RouteComponent() {
 
 						{/* Product Details */}
 						<div className='border dark:border-gray-700 rounded-lg p-4 space-y-4'>
-							<h3 className='font-semibold border-b-2 border-dashed border-gray-300 pb-1 text-purple-950 dark:text-white'>
+							<h3 className='font-semibold border-b-2 border-dashed border-gray-300 pb-1 text-[#2b1e20] dark:text-white'>
 								প্রোডাক্ট ডিটেইলস
 							</h3>
 
@@ -194,7 +194,7 @@ function RouteComponent() {
 							))}
 
 							{/* Totals */}
-							<div className='space-y-1 text-sm text-purple-950 dark:text-gray-200'>
+							<div className='space-y-1 text-sm text-[#2b1e20] dark:text-gray-200'>
 								<Row label='সাব-টোটাল (+)' value={`TK. ${subTotal}`} />
 								{form.watch('district') === 'ঢাকা' ? (
 									<Row
@@ -219,14 +219,14 @@ function RouteComponent() {
 
 							{/* Payment */}
 							<div className='grid md:flex gap-5'>
-								<div className='flex items-center gap-2 pt-3 text-purple-950 dark:text-white'>
+								<div className='flex items-center gap-2 pt-3 text-[#2b1e20] dark:text-white'>
 									<input type='radio' checked readOnly />
 									<span className='text-md font-medium'>Cash on delivery</span>
 									<span className='text-md font-medium bg-red-100 dark:bg-red-900 px-2 py-0.5 rounded-md'>
 										COD
 									</span>
 								</div>
-								{/* <div className='flex items-center gap-2 border-t dark:border-gray-700 pt-3 text-purple-950 dark:text-white'>
+								{/* <div className='flex items-center gap-2 border-t dark:border-gray-700 pt-3 text-[#2b1e20] dark:text-white'>
 									<input type='radio' checked readOnly />
 									<span className='text-sm'>Online Payment</span>
 									<span className='text-xs bg-red-100 dark:bg-red-900 px-2 py-0.5 rounded-md'>
@@ -236,7 +236,7 @@ function RouteComponent() {
 							</div>
 
 							{/* Delivery Info */}
-							<p className='text-md border text-purple-950 font-medium dark:text-gray-400 bg-gray-100 dark:bg-transparent p-2 py-3 rounded-md'>
+							<p className='text-md border text-[#2b1e20] font-medium dark:text-gray-400 bg-gray-100 dark:bg-transparent p-2 py-3 rounded-md'>
 								১-৩ দিনের মধ্যে হোম ডেলিভারি করা হবে। এর মধ্যে কল দেয়া হবে না
 							</p>
 
@@ -245,11 +245,11 @@ function RouteComponent() {
 								<input
 									type='text'
 									placeholder='If you have a Promo Code, Enter Here...'
-									className='flex-1 border rounded-md px-3 py-3 text-sm bg-white dark:bg-transparent text-purple-950 dark:text-white border-purple-950 focus:ring-2 focus:ring-purple-950 outline-0'
+									className='flex-1 border rounded-md px-3 py-3 text-sm bg-white dark:bg-transparent text-[#2b1e20] dark:text-white border-[#2b1e20] focus:ring-2 focus:ring-[#2b1e20] outline-0'
 								/>
 								<Button
 									type='button'
-									className='bg-purple-950 py-6 hover:bg-purple-900 text-white cursor-pointer px-4 rounded-md text-sm'
+									className='bg-[#2b1e20] py-6 hover:bg-purple-900 text-white cursor-pointer px-4 rounded-md text-sm'
 								>
 									Apply
 								</Button>
@@ -258,7 +258,7 @@ function RouteComponent() {
 							{/* Order Button */}
 							<Button
 								type='submit'
-								className='w-full bg-purple-950 hover:bg-purple-900 text-white py-6 cursor-pointer rounded-md font-semibold'
+								className='w-full bg-[#fcce09] hover:bg-yellow-500 text-black white py-6 cursor-pointer rounded-md font-semibold'
 								disabled={
 									placeOrder.isPending || !cartList?.productsInCart?.length
 								}

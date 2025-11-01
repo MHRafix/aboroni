@@ -1,12 +1,4 @@
 import { Input } from '@/components/ui/input';
-import {
-	Select,
-	SelectContent,
-	SelectGroup,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/components/ui/select';
 import { Product } from '@/gql/graphql';
 import { FC, useEffect, useState } from 'react';
 import { ProductCard } from './ProductCard';
@@ -42,26 +34,29 @@ const ProductsSection: FC<{
 					)}
 				</div>
 				{title !== 'রিলেটেড প্রোডাক্টস' && (
-					<div className='grid md:grid-cols-2 gap-5'>
+					<div className='grid lg:flex items-center gap-5'>
+						<div className='flex items-center gap-2'>
+							<div className='bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+								All
+							</div>
+							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+								Lady's
+							</div>
+							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+								Men's
+							</div>
+							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+								Kids's
+							</div>
+							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+								Leather
+							</div>
+						</div>{' '}
 						<Input
 							onChange={(e) => handleSearch(e.target.value)}
 							className='md:w-[300px] py-6'
 							placeholder='Search your products...'
 						/>{' '}
-						<Select>
-							<SelectTrigger className='w-full py-6'>
-								<SelectValue placeholder='Filter by category' />
-							</SelectTrigger>
-							<SelectContent>
-								<SelectGroup>
-									<SelectItem value='all'>All</SelectItem>
-									<SelectItem value='ladys'>Ladys</SelectItem>
-									<SelectItem value='gents'>Gents</SelectItem>
-									<SelectItem value='kids'>Kids</SelectItem>
-									<SelectItem value='general'>General</SelectItem>
-								</SelectGroup>
-							</SelectContent>
-						</Select>
 					</div>
 				)}
 			</div>

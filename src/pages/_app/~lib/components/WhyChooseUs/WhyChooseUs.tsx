@@ -44,10 +44,10 @@ export function WhyChooseUs() {
 							className='text-center space-y-4 bg-white shadow-md p-5 rounded-md'
 						>
 							<div className='mx-auto w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center'>
-								<feature.icon className='h-8 w-8 text-purple-950' />
+								<feature.icon className='h-8 w-8 text-[#2b1e20]' />
 							</div>
 							<div className='space-y-2'>
-								<h3 className='text-xl font-semibold text-purple-950'>
+								<h3 className='text-xl font-semibold text-[#2b1e20]'>
 									{feature.title}
 								</h3>
 								<p className='text-muted-foreground text-sm text-pretty'>

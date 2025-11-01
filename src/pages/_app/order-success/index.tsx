@@ -43,7 +43,7 @@ function RouteComponent() {
 	};
 
 	return (
-		<div className='relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0B061A] dark:to-[#0B061A] text-slate-900 dark:text-slate-100'>
+		<div className='relative w-full overflow-hidden bg-gradient-to-b from-slate-50 to-white text-slate-900 dark:text-slate-100'>
 			{/* Confetti */}
 			<Confetti
 				width={width}
@@ -53,7 +53,7 @@ function RouteComponent() {
 			/>
 
 			<div className='mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 flex items-center justify-center'>
-				<div className='w-full rounded-2xl bg-white/80 dark:bg-[#1A1030] backdrop-blur border border-slate-200/60 dark:border-purple-800 shadow-xl p-6 sm:p-10'>
+				<div className='w-full rounded-2xl bg-white/80 dark:bg-[#1A1030] backdrop-blur border border-slate-200/60 dark:border-[#443436] shadow-xl p-6 sm:p-10'>
 					{/* Badge */}
 					<div className='flex items-center justify-center'>
 						<div className='h-16 w-16 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center ring-8 ring-emerald-50 dark:ring-emerald-900/30'>
@@ -71,7 +71,7 @@ function RouteComponent() {
 
 					{/* Order ID */}
 					<div className='mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center'>
-						<div className='flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 dark:border-purple-800 bg-white dark:bg-[#140a29] px-4 py-3'>
+						<div className='flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 dark:border-[#443436] bg-white dark:bg-[#140a29] px-4 py-3'>
 							<span className='text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400'>
 								Order ID
 							</span>
@@ -81,7 +81,7 @@ function RouteComponent() {
 						</div>
 						<button
 							onClick={handleCopy}
-							className='inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-medium border border-slate-200 dark:border-purple-800 bg-slate-50 hover:bg-slate-100 dark:bg-[#140a29] dark:hover:bg-[#1A1030] transition focus:outline-none focus:ring-2 focus:ring-emerald-500'
+							className='inline-flex items-center justify-center rounded-xl px-4 py-3 text-sm font-medium border border-slate-200 dark:border-[#443436] bg-slate-50 hover:bg-slate-100 dark:bg-[#140a29] dark:hover:bg-[#1A1030] transition focus:outline-none focus:ring-2 focus:ring-emerald-500'
 						>
 							{copied ? (
 								<span className='inline-flex items-center gap-2'>
@@ -99,13 +99,13 @@ function RouteComponent() {
 					<div className='mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4'>
 						<Link
 							to='/'
-							className='w-full sm:w-auto inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium bg-purple-950 hover:bg-purple-900 text-white transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-900'
+							className='w-full sm:w-auto inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium bg-[#fcce09] text-black transition focus:outline-none focus:ring-2 focus:ring-offset-2'
 						>
 							<ArrowLeft /> &nbsp; Continue Shopping
 						</Link>
 						<Link
 							to={`/track-order`}
-							className='w-full sm:w-auto inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium border border-slate-200 dark:border-purple-800 bg-white hover:bg-slate-50 dark:bg-[#140a29] dark:hover:bg-[#1A1030] transition focus:outline-none'
+							className='w-full sm:w-auto inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium border border-slate-200 dark:border-[#443436] bg-white hover:bg-slate-50 dark:bg-[#140a29] dark:hover:bg-[#1A1030] transition focus:outline-none'
 						>
 							<SearchCheck /> &nbsp; Track Order
 						</Link>

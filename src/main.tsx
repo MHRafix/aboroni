@@ -8,13 +8,11 @@ import { ThemeProvider } from './components/providers/ThemeProvider';
 import './index.css';
 import { routeTree } from './pagesTree.gen';
 import { jotaiStore } from './store';
-import { useAuth } from './store/auth.atom';
 
 // Create a new router instance
 const router = createRouter({
 	defaultPendingComponent: GlobalLoadingScreen,
 	routeTree,
-	context: { auth: undefined! },
 	// Since we're using React Query, we don't want loader calls to ever be stale
 	// This will ensure that the loader is always called when the route is preloaded or visited
 	defaultPreloadStaleTime: 0,
@@ -28,8 +26,7 @@ declare module '@tanstack/react-router' {
 }
 
 const InnerApp = () => {
-	const [auth] = useAuth();
-	return <RouterProvider router={router} context={{ auth }} />;
+	return <RouterProvider router={router} />;
 };
 
 createRoot(document.getElementById('root')!).render(

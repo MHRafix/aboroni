@@ -1,10 +1,7 @@
-import { IAuthStore } from '@/store/auth.atom';
 import { createRootRouteWithContext, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
-interface IRouteContext {
-	auth: IAuthStore;
-}
+interface IRouteContext {}
 
 export const Route = createRootRouteWithContext<IRouteContext>()({
 	// beforeLoad: async () => {

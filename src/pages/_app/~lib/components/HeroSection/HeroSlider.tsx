@@ -58,11 +58,11 @@ const HeroSlider = () => {
 									<span>Premium Quality</span>
 								</div>
 								<h1
-									className='text-4xl md:text-6xl dark:text-[#F5F3FF] text-purple-950 font-extrabold leading-tight mb-4'
+									className='text-4xl md:text-6xl dark:text-[#F5F3FF] text-[#fcce09] font-extrabold leading-tight mb-4'
 									// style={{ color: colors.text }}
 								>
 									{product?.title.split(' ')[0]}{' '}
-									<span style={{ color: colors.accent }}>
+									<span className='dark:text-[#fcce09] text-[#2b1e20]'>
 										{product?.title?.split(' ').slice(1, -1).join(' ')}{' '}
 									</span>
 									{
@@ -71,7 +71,7 @@ const HeroSlider = () => {
 										]
 									}
 								</h1>
-								<p className='text-base md:text-lg dark:text-[#C8B8FF] text-purple-950 mb-8'>
+								<p className='text-base md:text-lg dark:text-gray-400 text-[#2b1e20] mb-8'>
 									{product?.shortDescription}
 								</p>
 								<div className='flex gap-3'>
@@ -86,10 +86,10 @@ const HeroSlider = () => {
 											});
 										}}
 									>
-										<ShoppingCart className='!h-6 !w-6 mr-2' /> Add to Cart
+										<ShoppingBasketIcon className='!h-6 !w-6 mr-2' /> Buy Now
 									</button>
-									<button
-										className='flex items-center py-2.5 justify-center px-5 sm:px-8 font-medium text-md rounded-md bg-purple-950 cursor-pointer transition duration-300 hover:bg-purple-800'
+									{/* <button
+										className='flex items-center py-2.5 justify-center px-5 sm:px-8 font-medium text-md rounded-md bg-[#2b1e20] cursor-pointer transition duration-300 hover:bg-[#443436]'
 										style={{ color: 'white' }}
 										onClick={() => {
 											navigate({
@@ -101,7 +101,7 @@ const HeroSlider = () => {
 										}}
 									>
 										<ShoppingBasketIcon className='!h-6 !w-6 mr-2' /> Buy Now
-									</button>
+									</button> */}
 								</div>
 							</div>
 							<div className='hidden lg:block'>
@@ -127,7 +127,7 @@ const HeroSlider = () => {
 									<span>Premium Quality</span>
 								</div>
 								<h1
-									className='text-4xl md:text-6xl dark:text-[#F5F3FF] text-purple-950 font-extrabold leading-tight mb-4'
+									className='text-4xl md:text-6xl dark:text-[#F5F3FF] text-[#fcce09] font-extrabold leading-tight mb-4'
 									// style={{ color: colors.text }}
 								>
 									{product?.title.split(' ')[0]}{' '}
@@ -140,7 +140,7 @@ const HeroSlider = () => {
 										]
 									}
 								</h1>
-								<p className='text-base md:text-lg dark:text-[#C8B8FF] text-purple-950 mb-8'>
+								<p className='text-base md:text-lg dark:text-[#C8B8FF] text-[#fcce09] mb-8'>
 									{product?.shortDescription}
 								</p>
 								<div className='flex gap-3'>
@@ -158,7 +158,7 @@ const HeroSlider = () => {
 										<ShoppingCart className='!h-6 !w-6 mr-2' /> Add to Cart
 									</button>{' '}
 									<button
-										className='flex items-center py-2.5 justify-center px-5 sm:px-8 font-medium text-md rounded-md bg-purple-950 cursor-pointer transition duration-300 hover:bg-purple-800'
+										className='flex items-center py-2.5 justify-center px-5 sm:px-8 font-medium text-md rounded-md bg-[#2b1e20] cursor-pointer transition duration-300 hover:bg-[#443436]'
 										style={{ color: 'white' }}
 										onClick={() => {
 											navigate({

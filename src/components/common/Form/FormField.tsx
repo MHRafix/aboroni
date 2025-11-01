@@ -29,7 +29,7 @@ export function FormField({
 			name={name}
 			render={({ field }) => (
 				<FormItem>
-					<FormLabel className='text-purple-950 dark:text-gray-300'>
+					<FormLabel className='text-[#2b1e20] dark:text-gray-300'>
 						{label}
 					</FormLabel>
 					<FormControl>
@@ -37,13 +37,13 @@ export function FormField({
 							<Textarea
 								placeholder={placeholder}
 								{...field}
-								className='bg-white dark:bg-transparent text-purple-950 dark:text-white'
+								className='bg-white dark:bg-transparent text-[#2b1e20] dark:text-white'
 							/>
 						) : (
 							<Input
 								placeholder={placeholder}
 								{...field}
-								className='bg-white py-6 dark:bg-transparent text-purple-950 dark:text-white'
+								className='bg-white py-6 dark:bg-transparent text-[#2b1e20] dark:text-white'
 							/>
 						)}
 					</FormControl>

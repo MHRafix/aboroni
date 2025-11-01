@@ -57,7 +57,7 @@ function RouteComponent() {
 	return (
 		<div className='relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0B061A] dark:to-[#0B061A] text-slate-900 dark:text-slate-100'>
 			<div className='mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24'>
-				<div className='w-full rounded-2xl bg-white/80 dark:bg-[#1A1030] backdrop-blur border border-slate-200/60 dark:border-purple-800 shadow-xl p-6 sm:p-10'>
+				<div className='w-full rounded-2xl bg-white/80 dark:bg-[#1A1030] backdrop-blur border border-slate-200/60 dark:border-[#443436] shadow-xl p-6 sm:p-10'>
 					<h1 className='text-center text-2xl sm:text-3xl font-semibold tracking-tight'>
 						Order Tracking
 					</h1>
@@ -75,12 +75,12 @@ function RouteComponent() {
 							placeholder='Enter Order ID'
 							value={inputId}
 							onChange={(e) => setInputId(e.target.value)}
-							className='flex-1 rounded-md  border border-slate-300 dark:border-purple-800 bg-white dark:bg-[#140a29] px-4 py-6 text-sm sm:text-base focus:outline-none focus:ring-purple-500'
+							className='flex-1 rounded-md  border border-slate-300 dark:border-[#443436] bg-white dark:bg-[#140a29] px-4 py-6 text-sm sm:text-base focus:outline-none focus:ring-purple-500'
 						/>
 						<Button
 							disabled={!inputId}
 							type='submit'
-							className='cursor-pointer rounded-md px-5 py-6 text-sm font-medium bg-purple-950 hover:bg-purple-900 text-white transition focus:outline-none focus:ring-2  focus:ring-purple-900'
+							className='cursor-pointer rounded-md px-5 py-6 text-sm font-medium bg-[#2b1e20] hover:bg-purple-900 text-white transition focus:outline-none focus:ring-2  focus:ring-purple-900'
 						>
 							<SearchCheck /> Track Order
 						</Button>
@@ -90,7 +90,7 @@ function RouteComponent() {
 						<div className='mt-12'>
 							{/* Order ID Display */}
 							<div className='flex justify-center mb-10'>
-								<div className='flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 dark:border-purple-800 bg-white dark:bg-[#140a29] px-4 py-2'>
+								<div className='flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 dark:border-[#443436] bg-white dark:bg-[#140a29] px-4 py-2'>
 									<span className='text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400'>
 										Order ID
 									</span>
@@ -131,7 +131,7 @@ function RouteComponent() {
 							<div className='mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4'>
 								<Link
 									to='/'
-									className='w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium bg-purple-950 hover:bg-purple-900 text-white transition focus:outline-none focus:ring-2'
+									className='w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium bg-[#2b1e20] hover:bg-purple-900 text-white transition focus:outline-none focus:ring-2'
 								>
 									<ArrowLeft /> &nbsp; Back to Shop
 								</Link>

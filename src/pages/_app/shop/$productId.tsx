@@ -57,7 +57,7 @@ function RouteComponent() {
 		<div className='container mx-auto mt-20'>
 			<div className='my-5 p-2 grid grid-cols-1 xl:grid-cols-2 gap-6'>
 				{/* Product Image */}
-				<div className='grid border dark:border-purple-950 border-gray-200 p-5 rounded-md'>
+				<div className='grid border dark:border-[#fcce09] border-gray-200 p-5 rounded-md'>
 					{/* <img
 						src={data?.product?.thumbnail?.externalUrl!}
 						alt='product-image'
@@ -84,7 +84,7 @@ function RouteComponent() {
 											className={`w-full h-[400px] md:h-[550px] rounded-md mx-auto object-cover`}
 										/>
 										{data?.product?.brand?.name && (
-											<Badge className='absolute top-3 left-3 dark:bg-[#FFD600] bg-purple-950 dark:text-black font-medium w-[65px] h-7 text-md'>
+											<Badge className='absolute top-3 left-3 dark:bg-[#FFD600] bg-[#fcce09] text-black font-medium w-[65px] h-7 text-md'>
 												-
 												{data?.product?.regularPrice -
 													data?.product?.salePrice!}{' '}
@@ -117,13 +117,13 @@ function RouteComponent() {
 					</Swiper>
 				</div>{' '}
 				{/* Product Details */}
-				<div className='border dark:border-purple-950 border-gray-200 p-5 rounded-md'>
-					<h2 className='text-2xl md:text-3xl font-bold text-purple-950 dark:text-white mb-2'>
+				<div className='border dark:border-[#fcce09] border-gray-200 p-5 rounded-md'>
+					<h2 className='text-2xl md:text-3xl font-bold text-[#fcce09] dark:text-white mb-2'>
 						{data?.product?.title || 'N/A'}
 					</h2>
 
 					<div className='flex items-center space-x-2'>
-						<span className='font-extrabold text-3xl md:text-4xl dark:text-[#FFD600] text-purple-950'>
+						<span className='font-extrabold text-3xl md:text-4xl dark:text-[#FFD600] text-[#fcce09]'>
 							৳ {data?.product?.salePrice}
 						</span>
 						{data?.product?.regularPrice && (
@@ -135,56 +135,59 @@ function RouteComponent() {
 					</div>
 					<div className='space-y-6 mt-3'>
 						{/* Color Options */}
-						<div>
-							<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
-								Choose Color
-							</h3>
-							<div className='flex flex-wrap gap-3'>
-								{data?.product?.colors?.map((color, idx) => (
-									<button
-										key={idx}
-										onClick={() => setSelectedColor(color?.color)}
-										className={`cursor-pointer px-4 py-2 border rounded-md transition duration-300 
+						{data?.product?.colors?.length ? (
+							<div>
+								<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
+									Choose Color
+								</h3>
+								<div className='flex flex-wrap gap-3'>
+									{data?.product?.colors?.map((color, idx) => (
+										<button
+											key={idx}
+											onClick={() => setSelectedColor(color?.color)}
+											className={`cursor-pointer px-4 py-2 border rounded-md transition duration-300 
 											${
 												selectedColor === color?.color
-													? 'bg-purple-950 text-white dark:bg-yellow-400 dark:text-black'
-													: 'bg-gray-100 text-gray-700 dark:bg-transparent dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-purple-800'
+													? 'bg-[#fcce09] text-white dark:bg-yellow-400 dark:text-black'
+													: 'bg-gray-100 text-gray-700 dark:bg-transparent dark:text-gray-200 hover:[#fcce09] dark:hover:bg-[#443436]'
 											}`}
-									>
-										{color?.color}
-									</button>
-								))}
+										>
+											{color?.color}
+										</button>
+									))}
+								</div>
+								<p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
+									Selected: {selectedColor}
+								</p>
 							</div>
-							<p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
-								Selected: {selectedColor}
-							</p>
-						</div>
-
+						) : null}
 						{/* Size Options */}
-						<div>
-							<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
-								Choose Size
-							</h3>
-							<div className='flex flex-wrap gap-3'>
-								{data?.product?.sizes?.map((size, idx) => (
-									<button
-										key={idx}
-										onClick={() => setSelectedSize(size?.size)}
-										className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition duration-300 
+						{data?.product?.sizes?.length ? (
+							<div>
+								<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
+									Choose Size
+								</h3>
+								<div className='flex flex-wrap gap-3'>
+									{data?.product?.sizes?.map((size, idx) => (
+										<button
+											key={idx}
+											onClick={() => setSelectedSize(size?.size)}
+											className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition duration-300 
 											${
 												selectedSize === size?.size
-													? 'bg-purple-950 text-white dark:bg-yellow-400 dark:text-black'
-													: 'bg-gray-100 text-gray-700 dark:bg-transparent dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-purple-800'
+													? 'bg-[#fcce09] text-white dark:bg-yellow-400 dark:text-black'
+													: 'bg-gray-100 text-gray-700 dark:bg-transparent dark:text-gray-200 hover:[#fcce09] dark:hover:bg-[#443436]'
 											}`}
-									>
-										{size?.size}
-									</button>
-								))}
+										>
+											{size?.size}
+										</button>
+									))}
+								</div>
+								<p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
+									Selected: {selectedSize}
+								</p>
 							</div>
-							<p className='mt-2 text-sm text-gray-500 dark:text-gray-400'>
-								Selected: {selectedSize}
-							</p>
-						</div>
+						) : null}
 
 						{/* Quantity Selector */}
 						<div>
@@ -194,7 +197,7 @@ function RouteComponent() {
 							<div className='flex items-center space-x-3'>
 								<button
 									onClick={() => handleQuantity('dec')}
-									className='p-3 rounded-lg bg-gray-100 dark:bg-transparent text-md font-bold cursor-pointer border transition duration-300 hover:bg-purple-100 dark:hover:bg-purple-800'
+									className='p-3 rounded-lg bg-gray-100 dark:bg-transparent text-md font-bold cursor-pointer border transition duration-300 hover:[#fcce09] dark:hover:bg-[#443436]'
 								>
 									<Minus className='w-5 h-5' />
 								</button>
@@ -206,7 +209,7 @@ function RouteComponent() {
 								/>
 								<button
 									onClick={() => handleQuantity('inc')}
-									className='p-3 rounded-lg bg-gray-100 dark:bg-transparent text-md font-bold cursor-pointer border transition duration-300 hover:bg-purple-100 dark:hover:bg-purple-800'
+									className='p-3 rounded-lg bg-gray-100 dark:bg-transparent text-md font-bold cursor-pointer border transition duration-300 hover:[#fcce09] dark:hover:bg-[#443436]'
 								>
 									<Plus className='w-5 h-5' />
 								</button>
@@ -248,7 +251,7 @@ function RouteComponent() {
 								<ShoppingCart className='!h-6 !w-6 mr-2' /> Add to Cart
 							</button>
 							<button
-								className='flex items-center py-2.5 justify-center w-full sm:w-1/2 font-medium text-md rounded-md bg-purple-950 cursor-pointer transition duration-300 hover:bg-purple-800'
+								className='flex items-center py-2.5 justify-center w-full sm:w-1/2 font-medium text-md rounded-md bg-[#fcce09] cursor-pointer transition duration-300 hover:bg-yellow-600 !text-black'
 								style={{ color: 'white' }}
 								onClick={() => {
 									trackEvent('AddToCart', {
@@ -288,7 +291,7 @@ function RouteComponent() {
 				</div>
 			</div>
 
-			<div className='mx-2 my-8 border dark:border-purple-950 border-gray-200 rounded-md'>
+			<div className='mx-2 my-8 border dark:border-[#fcce09] border-gray-200 rounded-md p-2'>
 				<Tabs defaultValue='description' className='!w-full'>
 					<TabsList className=' !w-full rounded-none'>
 						<TabsTrigger className='p-4' value='description'>
@@ -304,39 +307,43 @@ function RouteComponent() {
 						></div>
 					</TabsContent>
 					<TabsContent value='additional_info' className='space-y-4 px-3 my-5'>
-						<div>
-							<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
-								Available Sizes:
-							</h3>
-							<div className='flex flex-wrap gap-3'>
-								{data?.product?.sizes?.map((size, idx) => (
-									<button
-										key={idx}
-										onClick={() => setSelectedSize(size?.size)}
-										className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition duration-300 
-											bg-purple-950 text-white dark:bg-yellow-400 dark:text-black`}
-									>
-										{size?.size}
-									</button>
-								))}
+						{data?.product?.sizes?.length ? (
+							<div>
+								<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
+									Available Sizes:
+								</h3>
+								<div className='flex flex-wrap gap-3'>
+									{data?.product?.sizes?.map((size, idx) => (
+										<button
+											key={idx}
+											onClick={() => setSelectedSize(size?.size)}
+											className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition duration-300 
+											bg-[#fcce09] text-white dark:bg-yellow-400 dark:text-black`}
+										>
+											{size?.size}
+										</button>
+									))}
+								</div>
 							</div>
-						</div>
-						<div>
-							<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
-								Available Colors:
-							</h3>
-							<div className='flex flex-wrap gap-3'>
-								{data?.product?.colors?.map((color, idx) => (
-									<button
-										key={idx}
-										onClick={() => setSelectedColor(color?.color)}
-										className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition bg-purple-950 text-white dark:bg-yellow-400 dark:text-black`}
-									>
-										{color?.color}
-									</button>
-								))}
+						) : null}
+						{data?.product?.colors?.length ? (
+							<div>
+								<h3 className='text-lg font-semibold text-gray-700 dark:text-gray-200 mb-2'>
+									Available Colors:
+								</h3>
+								<div className='flex flex-wrap gap-3'>
+									{data?.product?.colors?.map((color, idx) => (
+										<button
+											key={idx}
+											onClick={() => setSelectedColor(color?.color)}
+											className={`px-4 py-2 rounded-lg border font-medium cursor-pointer transition bg-[#fcce09] text-white dark:bg-yellow-400 dark:text-black`}
+										>
+											{color?.color}
+										</button>
+									))}
+								</div>
 							</div>
-						</div>
+						) : null}
 					</TabsContent>
 				</Tabs>
 			</div>

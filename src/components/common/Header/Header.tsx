@@ -100,7 +100,7 @@ const Navbar = () => {
 							>
 								<ShoppingCart className='h-4 w-4 md:h-5 md:w-5' />
 							</Button>
-							<span className='w-5 h-5 md:w-6 md:h-6 flex items-center justify-center font-semibold absolute -top-2 -right-2 bg-purple-950 dark:bg-[#FFD600] text-white dark:text-black text-[11px] md:text-[12px] rounded-full leading-none'>
+							<span className='w-5 h-5 md:w-6 md:h-6 flex items-center justify-center font-semibold absolute -top-2 -right-2 bg-[#2b1e20] dark:bg-[#FFD600] text-white dark:text-black text-[11px] md:text-[12px] rounded-full leading-none'>
 								{totalQuantity}
 							</span>
 						</div>

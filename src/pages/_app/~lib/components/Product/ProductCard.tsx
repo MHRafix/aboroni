@@ -46,7 +46,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
 							className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105`}
 						/>
 						{product?.regularPrice && (
-							<Badge className='absolute top-2 left-2 dark:bg-[#FFD600] bg-purple-950 dark:text-black font-medium w-[65px] h-7 text-md'>
+							<Badge className='absolute top-2 left-2 dark:bg-[#FFD600] bg-[#fcce09] text-black font-medium w-[65px] h-7 text-md'>
 								-{product?.regularPrice - product?.salePrice!} TK
 							</Badge>
 						)}
@@ -59,7 +59,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
 					<div className='py-4 space-y-2'>
 						<h3 className='font-medium text-sm lg:text-md'>{product.title}</h3>
 						<div className='flex items-center space-x-2'>
-							<span className='font-semibold  text-sm lg:text-lg dark:text-[#FFD600] text-purple-950'>
+							<span className='font-semibold  text-sm lg:text-lg dark:text-[#FFD600] text-[#fcce09]'>
 								<span className='font-extrabold'>৳</span> {product?.salePrice}
 							</span>
 							{product.regularPrice && (
@@ -85,7 +85,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
 					</div>{' '}
 					{/* <div className='w-full flex gap-2 opacity-100 transition'>
 						<button
-							className='flex items-center py-3 justify-center w-full font-medium text-md  bg-purple-950 cursor-pointer transition duration-300 hover:bg-purple-800'
+							className='flex items-center py-3 justify-center w-full font-medium text-md  bg-[#fcce09] cursor-pointer transition duration-300 hover:bg-[#443436]'
 							style={{ color: 'white' }}
 							onClick={() => {
 								navigate({

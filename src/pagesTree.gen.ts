@@ -15,8 +15,6 @@ import { Route as AppTrackOrderIndexRouteImport } from './pages/_app/track-order
 import { Route as AppOrderSuccessIndexRouteImport } from './pages/_app/order-success/index'
 import { Route as AppCheckoutIndexRouteImport } from './pages/_app/checkout/index'
 import { Route as AppShopProductIdRouteImport } from './pages/_app/shop/$productId'
-import { Route as AppAuthRegistrationRouteImport } from './pages/_app/auth/registration'
-import { Route as AppAuthLoginRouteImport } from './pages/_app/auth/login'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
@@ -47,21 +45,9 @@ const AppShopProductIdRoute = AppShopProductIdRouteImport.update({
   path: '/shop/$productId',
   getParentRoute: () => AppRoute,
 } as any)
-const AppAuthRegistrationRoute = AppAuthRegistrationRouteImport.update({
-  id: '/auth/registration',
-  path: '/auth/registration',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppAuthLoginRoute = AppAuthLoginRouteImport.update({
-  id: '/auth/login',
-  path: '/auth/login',
-  getParentRoute: () => AppRoute,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
-  '/auth/login': typeof AppAuthLoginRoute
-  '/auth/registration': typeof AppAuthRegistrationRoute
   '/shop/$productId': typeof AppShopProductIdRoute
   '/checkout': typeof AppCheckoutIndexRoute
   '/order-success': typeof AppOrderSuccessIndexRoute
@@ -69,8 +55,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
-  '/auth/login': typeof AppAuthLoginRoute
-  '/auth/registration': typeof AppAuthRegistrationRoute
   '/shop/$productId': typeof AppShopProductIdRoute
   '/checkout': typeof AppCheckoutIndexRoute
   '/order-success': typeof AppOrderSuccessIndexRoute
@@ -80,8 +64,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/_app/': typeof AppIndexRoute
-  '/_app/auth/login': typeof AppAuthLoginRoute
-  '/_app/auth/registration': typeof AppAuthRegistrationRoute
   '/_app/shop/$productId': typeof AppShopProductIdRoute
   '/_app/checkout/': typeof AppCheckoutIndexRoute
   '/_app/order-success/': typeof AppOrderSuccessIndexRoute
@@ -91,27 +73,16 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/auth/login'
-    | '/auth/registration'
     | '/shop/$productId'
     | '/checkout'
     | '/order-success'
     | '/track-order'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/auth/login'
-    | '/auth/registration'
-    | '/shop/$productId'
-    | '/checkout'
-    | '/order-success'
-    | '/track-order'
+  to: '/' | '/shop/$productId' | '/checkout' | '/order-success' | '/track-order'
   id:
     | '__root__'
     | '/_app'
     | '/_app/'
-    | '/_app/auth/login'
-    | '/_app/auth/registration'
     | '/_app/shop/$productId'
     | '/_app/checkout/'
     | '/_app/order-success/'
@@ -166,27 +137,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppShopProductIdRouteImport
       parentRoute: typeof AppRoute
     }
-    '/_app/auth/registration': {
-      id: '/_app/auth/registration'
-      path: '/auth/registration'
-      fullPath: '/auth/registration'
-      preLoaderRoute: typeof AppAuthRegistrationRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/_app/auth/login': {
-      id: '/_app/auth/login'
-      path: '/auth/login'
-      fullPath: '/auth/login'
-      preLoaderRoute: typeof AppAuthLoginRouteImport
-      parentRoute: typeof AppRoute
-    }
   }
 }
 
 interface AppRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
-  AppAuthLoginRoute: typeof AppAuthLoginRoute
-  AppAuthRegistrationRoute: typeof AppAuthRegistrationRoute
   AppShopProductIdRoute: typeof AppShopProductIdRoute
   AppCheckoutIndexRoute: typeof AppCheckoutIndexRoute
   AppOrderSuccessIndexRoute: typeof AppOrderSuccessIndexRoute
@@ -195,8 +150,6 @@ interface AppRouteChildren {
 
 const AppRouteChildren: AppRouteChildren = {
   AppIndexRoute: AppIndexRoute,
-  AppAuthLoginRoute: AppAuthLoginRoute,
-  AppAuthRegistrationRoute: AppAuthRegistrationRoute,
   AppShopProductIdRoute: AppShopProductIdRoute,
   AppCheckoutIndexRoute: AppCheckoutIndexRoute,
   AppOrderSuccessIndexRoute: AppOrderSuccessIndexRoute,
