@@ -33,9 +33,9 @@ const ProductsSection: FC<{
 						</p>
 					)}
 				</div>
-				{title !== 'রিলেটেড প্রোডাক্টস' && (
+				{title !== 'Related Products' && (
 					<div className='grid lg:flex items-center gap-5'>
-						<div className='flex items-center gap-2'>
+						<div className='flex items-center flex-wrap gap-2'>
 							<div className='bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
 								All
 							</div>

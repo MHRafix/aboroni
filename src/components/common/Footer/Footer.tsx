@@ -7,7 +7,7 @@ const Footer = () => {
 	const navigate = useNavigate();
 
 	return (
-		<footer className='bg-card border-t border-border py-12 lg:py-16'>
+		<footer className='bg-background border-t border-border py-12 lg:py-16'>
 			<div className='container px-4 md:px-0 mx-auto'>
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12'>
 					{/* Brand */}

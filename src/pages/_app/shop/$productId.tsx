@@ -349,7 +349,8 @@ function RouteComponent() {
 			</div>
 			<div className='mx-2'>
 				<ProductsSection
-					title='রিলেটেড প্রোডাক্টস'
+					title='Related Products'
+					tagline='You may also like this'
 					products={
 						data?.products?.filter((product) => product?._id !== productId) as [
 							Product,

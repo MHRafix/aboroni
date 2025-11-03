@@ -1,5 +1,4 @@
 import { productAtom } from '@/store/products.atom';
-import { colors } from '@/theme/color';
 import { useNavigate } from '@tanstack/react-router';
 import { useAtom } from 'jotai';
 import {
@@ -131,7 +130,7 @@ const HeroSlider = () => {
 									// style={{ color: colors.text }}
 								>
 									{product?.title.split(' ')[0]}{' '}
-									<span style={{ color: colors.accent }}>
+									<span className='dark:text-[#fcce09] text-[#2b1e20]'>
 										{product?.title?.split(' ').slice(1, -1).join(' ')}{' '}
 									</span>
 									{
@@ -140,11 +139,11 @@ const HeroSlider = () => {
 										]
 									}
 								</h1>
-								<p className='text-base md:text-lg dark:text-[#C8B8FF] text-[#fcce09] mb-8'>
+								<p className='text-base md:text-lg dark:text-gray-400 text-[#2b1e20] mb-8'>
 									{product?.shortDescription}
 								</p>
 								<div className='flex gap-3'>
-									<button
+									{/* <button
 										className='flex items-center py-2.5 px-5 sm:px-8 justify-center font-medium text-md rounded-md cursor-pointer transition duration-300 bg-[#FFD600] hover:bg-yellow-500 text-black'
 										onClick={() => {
 											navigate({
@@ -156,10 +155,9 @@ const HeroSlider = () => {
 										}}
 									>
 										<ShoppingCart className='!h-6 !w-6 mr-2' /> Add to Cart
-									</button>{' '}
+									</button>{' '} */}
 									<button
-										className='flex items-center py-2.5 justify-center px-5 sm:px-8 font-medium text-md rounded-md bg-[#2b1e20] cursor-pointer transition duration-300 hover:bg-[#443436]'
-										style={{ color: 'white' }}
+										className='flex items-center py-2.5 px-5 sm:px-8 justify-center font-medium text-md rounded-md cursor-pointer transition duration-300 bg-[#FFD600] hover:bg-yellow-500 text-black'
 										onClick={() => {
 											navigate({
 												to: '/shop/$productId',

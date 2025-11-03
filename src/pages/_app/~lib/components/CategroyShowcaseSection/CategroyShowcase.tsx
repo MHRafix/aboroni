@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const CategoryShowcase = () => {
 	return (
-		<section className='py-8 lg:py-24 my-5 rounded-md bg-accent'>
+		<section className='py-8 lg:py-24 my-5 rounded-md dark:bg-[#2c2b2b] bg-[#F5F5F5]'>
 			<div className='px-4 lg:px-8'>
 				<div className='grid lg:grid-cols-2 gap-8 lg:gap-12 items-center'>
 					{/* Content */}
@@ -40,25 +40,25 @@ const CategoryShowcase = () => {
 
 					{/* Stats Grid */}
 					<div className='grid grid-cols-2 gap-6'>
-						<div className='bg-card p-6 lg:p-8 rounded-lg shadow-sm'>
+						<div className='bg-background p-6 lg:p-8 rounded-lg shadow-sm'>
 							<p className='font-serif text-4xl lg:text-5xl font-semibold mb-2'>
 								500+
 							</p>
 							<p className='text-muted-foreground'>Curated Products</p>
 						</div>
-						<div className='bg-card p-6 lg:p-8 rounded-lg shadow-sm'>
+						<div className='bg-background p-6 lg:p-8 rounded-lg shadow-sm'>
 							<p className='font-serif text-4xl lg:text-5xl font-semibold mb-2'>
 								50+
 							</p>
 							<p className='text-muted-foreground'>Designer Brands</p>
 						</div>
-						<div className='bg-card p-6 lg:p-8 rounded-lg shadow-sm'>
+						<div className='bg-background p-6 lg:p-8 rounded-lg shadow-sm'>
 							<p className='font-serif text-4xl lg:text-5xl font-semibold mb-2'>
 								4.9
 							</p>
 							<p className='text-muted-foreground'>Average Rating</p>
 						</div>
-						<div className='bg-card p-6 lg:p-8 rounded-lg shadow-sm'>
+						<div className='bg-background p-6 lg:p-8 rounded-lg shadow-sm'>
 							<p className='font-serif text-4xl lg:text-5xl font-semibold mb-2'>
 								24/7
 							</p>
