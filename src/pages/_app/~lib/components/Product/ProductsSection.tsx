@@ -7,7 +7,7 @@ const ProductsSection: FC<{
 	title?: string;
 	tagline?: string;
 	products: Product[];
-	productCategories: ProductCategory[];
+	productCategories?: ProductCategory[];
 }> = ({ title = 'লেটেস্ট কালেকশন', tagline, products, productCategories }) => {
 	const [searchProducts, setSearchProducts] = useState<Product[]>(products);
 	const [category, setCategory] = useState<string>('');
