@@ -20,6 +20,7 @@ function RouteComponent() {
 				title='Latest Collection'
 				tagline='Explore our latest collections'
 				products={data?.products}
+				productCategories={data?.productsCategories}
 			/>
 			<CategoryShowcase />
 			{/* <PromoBanner /> */}

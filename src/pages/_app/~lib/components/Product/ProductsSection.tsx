@@ -1,5 +1,5 @@
 import { Input } from '@/components/ui/input';
-import { Product } from '@/gql/graphql';
+import { Product, ProductCategory } from '@/gql/graphql';
 import { FC, useEffect, useState } from 'react';
 import { ProductCard } from './ProductCard';
 
@@ -7,8 +7,10 @@ const ProductsSection: FC<{
 	title?: string;
 	tagline?: string;
 	products: Product[];
-}> = ({ title = 'লেটেস্ট কালেকশন', tagline, products }) => {
+	productCategories: ProductCategory[];
+}> = ({ title = 'লেটেস্ট কালেকশন', tagline, products, productCategories }) => {
 	const [searchProducts, setSearchProducts] = useState<Product[]>(products);
+	const [category, setCategory] = useState<string>('');
 
 	const handleSearch = (keyword: string) => {
 		const result = products.filter((product) =>
@@ -36,21 +38,21 @@ const ProductsSection: FC<{
 				{title !== 'Related Products' && (
 					<div className='grid lg:flex items-center gap-5'>
 						<div className='flex items-center flex-wrap gap-2'>
-							<div className='bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
+							<div
+								className={`${category === '' ? 'bg-yellow-500' : 'bg-transparent'} hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer`}
+								onClick={() => setCategory('')}
+							>
 								All
 							</div>
-							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
-								Lady's
-							</div>
-							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
-								Men's
-							</div>
-							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
-								Kids's
-							</div>
-							<div className='hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer'>
-								Leather
-							</div>
+							{productCategories?.map((cat, idx) => (
+								<div
+									key={idx}
+									className={`${category === cat?.name ? 'bg-yellow-500' : 'bg-transparent'} hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer`}
+									onClick={() => setCategory(cat?.name)}
+								>
+									{cat?.name}
+								</div>
+							))}
 						</div>{' '}
 						<Input
 							onChange={(e) => handleSearch(e.target.value)}

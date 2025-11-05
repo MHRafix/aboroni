@@ -1,7 +1,15 @@
-import { Product, ProductPagination } from '@/gql/graphql';
+import {
+	Product,
+	ProductCategory,
+	ProductCategoryPagination,
+	ProductPagination,
+} from '@/gql/graphql';
 import { gqlRequest } from '@/lib/api-client';
 import { Product_Details_Query } from '@/pages/_app/shop/~lib/query/query.gql';
-import { All_Products_Query } from '@/pages/_app/~lib/query/query.gql';
+import {
+	All_Product_Categories_Query,
+	All_Products_Query,
+} from '@/pages/_app/~lib/query/query.gql';
 import { useAtom } from 'jotai';
 import { atomWithImmer } from 'jotai-immer';
 import { jotaiStore } from '.';
@@ -9,11 +17,13 @@ import { jotaiStore } from '.';
 export interface IProductStore {
 	isPending?: boolean;
 	products: Product[];
+	productsCategories: ProductCategory[];
 	product: Product | null;
 }
 export const productAtom = atomWithImmer<IProductStore>({
 	isPending: false,
 	products: [],
+	productsCategories: [],
 	product: null,
 });
 export async function fetchProducts() {
@@ -40,6 +50,37 @@ export async function fetchProducts() {
 	} catch {
 		jotaiStore.set(productAtom, (draft) => {
 			draft.products = [];
+		});
+	} finally {
+		jotaiStore.set(productAtom, (draft) => {
+			draft.isPending = false;
+		});
+	}
+}
+export async function fetchProductCategories() {
+	try {
+		const data = await gqlRequest<{
+			productCategories: ProductCategoryPagination | null;
+		}>({
+			query: All_Product_Categories_Query,
+			variables: {
+				input: {
+					page: 1,
+					limit: 1000,
+				},
+				orgUid: import.meta.env.VITE_APP_ORGANIZATION_UID,
+			},
+		});
+
+		jotaiStore.set(productAtom, (draft) => {
+			draft.isPending = false;
+			draft.productsCategories = data?.productCategories?.nodes as any;
+		});
+
+		return data;
+	} catch {
+		jotaiStore.set(productAtom, (draft) => {
+			draft.productsCategories = [];
 		});
 	} finally {
 		jotaiStore.set(productAtom, (draft) => {

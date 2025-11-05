@@ -33,3 +33,17 @@ export const All_Products_Query = gql`
 		}
 	}
 `;
+
+export const All_Product_Categories_Query = gql`
+	query ProductCategories(
+		$orgUid: String!
+		$input: ProductCategoriesListQueryDto
+	) {
+		productCategories(orgUID: $orgUid, input: $input) {
+			nodes {
+				_id
+				name
+			}
+		}
+	}
+`;

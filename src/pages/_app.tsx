@@ -1,7 +1,7 @@
 import AppLayout from '@/components/AppLayout';
 import HomeSkeleton from '@/components/common/GlobalSkeleton/HomeSkeleton';
 import { initFacebookPixel, trackPageView } from '@/lib/fbPixel';
-import { fetchProducts } from '@/store/products.atom';
+import { fetchProductCategories, fetchProducts } from '@/store/products.atom';
 import ScrollToTop from '@/utils/ScrollToTop';
 import { createFileRoute, Outlet } from '@tanstack/react-router';
 import { useEffect } from 'react';
@@ -11,6 +11,7 @@ export const Route = createFileRoute('/_app')({
 	async beforeLoad() {
 		// prefetch products before route loads
 		await fetchProducts();
+		await fetchProductCategories();
 
 		return {}; // you can pass extra data here if needed
 	},
