@@ -17,7 +17,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
 		>
 			<Card
 				onClick={() => {
-					trackEvent('ViewContent', {
+					trackEvent('ViewProduct', {
 						content_name: product?.title,
 						content_type: 'product', // required by FB for product pages
 						content_ids: [product?._id],
