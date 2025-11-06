@@ -18,6 +18,13 @@ const ProductsSection: FC<{
 		);
 		setSearchProducts(result);
 	};
+	const handleFilterByCategory = (cat: string) => {
+		setCategory(cat);
+		const result = products.filter((product) =>
+			product?.category?.name?.toLowerCase().includes(cat.toLowerCase())
+		);
+		setSearchProducts(result);
+	};
 
 	useEffect(() => {
 		setSearchProducts(products);
@@ -40,7 +47,7 @@ const ProductsSection: FC<{
 						<div className='flex items-center flex-wrap gap-2'>
 							<div
 								className={`${category === '' ? 'bg-yellow-500' : 'bg-transparent'} hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer`}
-								onClick={() => setCategory('')}
+								onClick={() => handleFilterByCategory('')}
 							>
 								All
 							</div>
@@ -48,7 +55,7 @@ const ProductsSection: FC<{
 								<div
 									key={idx}
 									className={`${category === cat?.name ? 'bg-yellow-500' : 'bg-transparent'} hover:bg-yellow-500 hover:duration-300 px-5 py-1 rounded-full border border-yellow-500 cursor-pointer`}
-									onClick={() => setCategory(cat?.name)}
+									onClick={() => handleFilterByCategory(cat?.name)}
 								>
 									{cat?.name}
 								</div>

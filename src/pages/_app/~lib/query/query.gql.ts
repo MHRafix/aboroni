@@ -18,6 +18,9 @@ export const All_Products_Query = gql`
 				brand {
 					name
 				}
+				category {
+					name
+				}
 				orgUID
 				salePrice
 				regularPrice
