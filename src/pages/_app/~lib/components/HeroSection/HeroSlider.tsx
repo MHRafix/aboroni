@@ -43,7 +43,7 @@ const HeroSlider = () => {
 									>
 										<Zoom>
 											<img
-												src={product?.thumbnail?.externalUrl!}
+												src={product?.carouselImages?.[0]?.externalUrl!}
 												alt='image'
 												className='w-full h-[330px] md:h-[550px] object-cover border-none'
 											/>
@@ -112,7 +112,7 @@ const HeroSlider = () => {
 									>
 										<Zoom>
 											<img
-												src={product?.thumbnail?.externalUrl!}
+												src={product?.carouselImages?.[0]?.externalUrl!}
 												alt='image'
 												className='w-full h-[550px] object-cover border-none'
 											/>

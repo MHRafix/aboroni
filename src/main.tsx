@@ -2,7 +2,7 @@ import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { Provider as JotaiProvider } from 'jotai';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import GlobalLoadingScreen from './components/GlobalLoadingScreen';
+import HomeSkeleton from './components/common/GlobalSkeleton/HomeSkeleton';
 import AppGlobalProvider from './components/providers/AppGlobalProvider';
 import { ThemeProvider } from './components/providers/ThemeProvider';
 import './index.css';
@@ -11,7 +11,7 @@ import { jotaiStore } from './store';
 
 // Create a new router instance
 const router = createRouter({
-	defaultPendingComponent: GlobalLoadingScreen,
+	defaultPendingComponent: HomeSkeleton,
 	routeTree,
 	// Since we're using React Query, we don't want loader calls to ever be stale
 	// This will ensure that the loader is always called when the route is preloaded or visited
