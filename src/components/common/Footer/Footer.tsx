@@ -41,7 +41,7 @@ const Footer = () => {
 								<Instagram className='h-5 w-5' />
 							</a>
 							<a
-								href='#'
+								href='https://www.facebook.com/profile.php?id=61573553529129'
 								className='text-muted-foreground hover:text-foreground transition-colors'
 							>
 								<Facebook className='h-5 w-5' />
